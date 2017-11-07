@@ -52,12 +52,12 @@ class Modal extends React.Component {
     return null;
   }
 
-  render = () => (
+  render = () => {
     let modalDialogClass = 'modal-dialog';
     if (this.props.size === 'sm') { modalDialogClass += 'modal-sm' }
     if (this.props.size === 'lg') { modalDialogClass += 'modal-lg' }
 
-    <div>
+    return <div>
       <div
         className={classNames('modal', 'fade', { show: this.state.visible })}
         style={{ display: ((this.state.visible || this.state.transitioning) ? 'block' : 'none') }}
@@ -73,8 +73,8 @@ class Modal extends React.Component {
         </div>
       </div>
       {this.renderBackdrop()}
-    </div>
-    )
+    </div>;
+  }
 }
 
 export default Modal;
