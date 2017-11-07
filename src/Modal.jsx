@@ -53,6 +53,10 @@ class Modal extends React.Component {
   }
 
   render = () => (
+    let modalDialogClass = 'modal-dialog';
+    if (this.props.size === 'sm') { modalDialogClass += 'modal-sm' }
+    if (this.props.size === 'lg') { modalDialogClass += 'modal-lg' }
+
     <div>
       <div
         className={classNames('modal', 'fade', { show: this.state.visible })}
@@ -62,7 +66,7 @@ class Modal extends React.Component {
         tabIndex="-1"
         onClick={this.props.onClickBackdrop}
       >
-        <div className="modal-dialog" role="document" onClick={this.stopPropagation}>
+        <div className={modalDialogClass} role="document" onClick={this.stopPropagation}>
           <div className="modal-content">
             {this.props.children}
           </div>
