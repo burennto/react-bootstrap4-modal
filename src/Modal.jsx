@@ -54,8 +54,8 @@ class Modal extends React.Component {
 
   render = () => {
     let modalDialogClass = 'modal-dialog';
-    if (this.props.size === 'sm') { modalDialogClass += 'modal-sm' }
-    if (this.props.size === 'lg') { modalDialogClass += 'modal-lg' }
+    if (this.props.size === 'sm') { modalDialogClass += ' modal-sm' }
+    if (this.props.size === 'lg') { modalDialogClass += ' modal-lg' }
 
     return <div>
       <div
